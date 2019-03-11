@@ -7,7 +7,7 @@ describe('cropstart (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const { dragBox } = cropper;
 
       dragBox.dispatchEvent(window.createEvent(POINTER_DOWN));
@@ -15,7 +15,7 @@ describe('cropstart (event)', () => {
       dragBox.dispatchEvent(window.createEvent(POINTER_UP));
     });
 
-    image.addEventListener('cropstart', (event) => {
+    image.__zone_symbol__addEventListener('cropstart', (event) => {
       expect(event.type).to.equal('cropstart');
       done();
     });
@@ -27,7 +27,7 @@ describe('cropstart (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const { dragBox } = cropper;
 
       dragBox.dispatchEvent(window.createEvent(POINTER_DOWN));
@@ -35,7 +35,7 @@ describe('cropstart (event)', () => {
       dragBox.dispatchEvent(window.createEvent(POINTER_UP));
     });
 
-    image.addEventListener('cropstart', (event) => {
+    image.__zone_symbol__addEventListener('cropstart', (event) => {
       expect(event.detail).to.be.an('object').that.has.all.keys(['action', 'originalEvent']);
       expect(event.detail.action).to.equal('crop');
       expect(event.detail.originalEvent.type).to.equal(POINTER_DOWN);
@@ -49,7 +49,7 @@ describe('cropstart (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const { dragBox } = cropper;
 
       dragBox.dispatchEvent(window.createEvent(POINTER_DOWN));
@@ -57,16 +57,16 @@ describe('cropstart (event)', () => {
       dragBox.dispatchEvent(window.createEvent(POINTER_UP));
     });
 
-    image.addEventListener('cropstart', (event) => {
+    image.__zone_symbol__addEventListener('cropstart', (event) => {
       event.preventDefault();
       done();
     });
 
-    image.addEventListener('cropmove', () => {
+    image.__zone_symbol__addEventListener('cropmove', () => {
       expect.fail(1, 0);
     });
 
-    image.addEventListener('cropend', () => {
+    image.__zone_symbol__addEventListener('cropend', () => {
       expect.fail(1, 0);
     });
 

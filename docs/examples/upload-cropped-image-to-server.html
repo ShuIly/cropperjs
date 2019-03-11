@@ -63,7 +63,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
   <script src="../js/cropper.js"></script>
   <script>
-    window.addEventListener('DOMContentLoaded', function () {
+    window.__zone_symbol__addEventListener('DOMContentLoaded', function () {
       var avatar = document.getElementById('avatar');
       var image = document.getElementById('image');
       var input = document.getElementById('input');
@@ -75,7 +75,7 @@
 
       $('[data-toggle="tooltip"]').tooltip();
 
-      input.addEventListener('change', function (e) {
+      input.__zone_symbol__addEventListener('change', function (e) {
         var files = e.target.files;
         var done = function (url) {
           input.value = '';
@@ -112,7 +112,7 @@
         cropper = null;
       });
 
-      document.getElementById('crop').addEventListener('click', function () {
+      document.getElementById('crop').__zone_symbol__addEventListener('click', function () {
         var initialAvatarURL;
         var canvas;
 

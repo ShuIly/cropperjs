@@ -113,7 +113,7 @@ declare namespace Cropper {
     cropmove?(event: CustomEvent): void;
     cropstart?(event: CustomEvent): void;
     data?: Data;
-    dragMode?: DragMode;
+    dragMode?: string;
     guides?: boolean;
     highlight?: boolean;
     initialAspectRatio?: number;
@@ -174,6 +174,6 @@ declare class Cropper {
   static setDefaults(options: Cropper.Options): void;
 }
 
-declare module 'cropperjs' {
+declare module 'zone-cropperjs' {
   export default Cropper;
 }

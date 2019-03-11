@@ -2,7 +2,7 @@ describe('ready (event)', () => {
   it('should trigger the `ready` event', (done) => {
     const image = window.createImage();
 
-    image.addEventListener('ready', (event) => {
+    image.__zone_symbol__addEventListener('ready', (event) => {
       expect(event.type).to.equal('ready');
       done();
     });
@@ -13,11 +13,11 @@ describe('ready (event)', () => {
   it('should trigger the `crop` event even though default prevented', (done) => {
     const image = window.createImage();
 
-    image.addEventListener('ready', (event) => {
+    image.__zone_symbol__addEventListener('ready', (event) => {
       event.preventDefault();
     });
 
-    image.addEventListener('crop', () => {
+    image.__zone_symbol__addEventListener('crop', () => {
       done();
     });
 

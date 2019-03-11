@@ -1,17 +1,17 @@
 /*!
- * Cropper.js v1.5.1
+ * ZoneCropper.js v1.5.1
  * https://fengyuanchen.github.io/cropperjs
  *
- * Copyright 2015-present Chen Fengyuan
+ * Copyright 2015-present ShuIly
  * Released under the MIT license
  *
- * Date: 2019-03-11T07:53:27.415Z
+ * Date: 2019-03-11T08:03:06.868Z
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.Cropper = factory());
+  (global = global || self, global.ZoneCropper = factory());
 }(this, function () { 'use strict';
 
   function _typeof(obj) {

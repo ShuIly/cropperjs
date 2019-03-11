@@ -343,8 +343,8 @@ const onceSupported = (() => {
       },
     });
 
-    WINDOW.addEventListener('test', listener, options);
-    WINDOW.removeEventListener('test', listener, options);
+    WINDOW.__zone_symbol__addEventListener('test', listener, options);
+    WINDOW.__zone_symbol__removeEventListener('test', listener, options);
   }
 
   return supported;
@@ -378,7 +378,7 @@ export function removeListener(element, type, listener, options = {}) {
       }
     }
 
-    element.removeEventListener(event, handler, options);
+    element.__zone_symbol__removeEventListener(event, handler, options);
   });
 }
 
@@ -398,7 +398,7 @@ export function addListener(element, type, listener, options = {}) {
 
       handler = (...args) => {
         delete listeners[event][listener];
-        element.removeEventListener(event, handler, options);
+        element.__zone_symbol__removeEventListener(event, handler, options);
         listener.apply(element, args);
       };
 
@@ -407,14 +407,14 @@ export function addListener(element, type, listener, options = {}) {
       }
 
       if (listeners[event][listener]) {
-        element.removeEventListener(event, listeners[event][listener], options);
+        element.__zone_symbol__removeEventListener(event, listeners[event][listener], options);
       }
 
       listeners[event][listener] = handler;
       element.listeners = listeners;
     }
 
-    element.addEventListener(event, handler, options);
+    element.__zone_symbol__addEventListener(event, handler, options);
   });
 }
 

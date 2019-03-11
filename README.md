@@ -906,7 +906,7 @@ This event fires when the target image has been loaded and the cropper instance 
 ```js
 let cropper;
 
-image.addEventListener('ready', function () {
+image.__zone_symbol__addEventListener('ready', function () {
   console.log(this.cropper === cropper);
   // > true
 });
@@ -939,7 +939,7 @@ cropper = new Cropper(image);
 This event fires when the canvas (image wrapper) or the crop box starts to change.
 
 ```js
-image.addEventListener('cropstart', (event) => {
+image.__zone_symbol__addEventListener('cropstart', (event) => {
   console.log(event.detail.originalEvent);
   console.log(event.detail.action);
 });
@@ -1001,7 +1001,7 @@ This event fires when the canvas (image wrapper) or the crop box changed.
 This event fires when a cropper instance starts to zoom in or zoom out its canvas (image wrapper).
 
 ```js
-image.addEventListener('zoom', (event) => {
+image.__zone_symbol__addEventListener('zoom', (event) => {
   // Zoom in
   if (event.detail.ratio > event.detail.oldRatio) {
     event.preventDefault(); // Prevent zoom in

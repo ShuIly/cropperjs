@@ -1,7 +1,7 @@
 {
-  "name": "cropperjs",
+  "name": "zone-cropperjs",
   "description": "JavaScript image cropper.",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "main": "dist/cropper.common.js",
   "module": "dist/cropper.esm.js",
   "browser": "dist/cropper.js",
@@ -33,9 +33,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fengyuanchen/cropperjs.git"
+    "url": "git+https://github.com/ShuIly/cropperjs.git"
   },
   "keywords": [
+    "angular",
     "image",
     "crop",
     "move",
@@ -53,12 +54,11 @@
     "web"
   ],
   "author": {
-    "name": "Chen Fengyuan",
-    "url": "https://chenfengyuan.com"
+    "name": "ShuIly"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fengyuanchen/cropperjs/issues"
+    "url": "https://github.com/ShuIly/cropperjs/issues"
   },
   "homepage": "https://fengyuanchen.github.io/cropperjs",
   "devDependencies": {
@@ -108,31 +108,4 @@
     "> 1%",
     "not ie <= 8"
   ],
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "*.{css,scss,html}": [
-        "stylelint --fix",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "{dist,docs}/**/*.js",
-      "*.min.*"
-    ]
-  }
 }

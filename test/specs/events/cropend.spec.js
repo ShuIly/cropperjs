@@ -7,7 +7,7 @@ describe('cropend (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const { dragBox } = cropper;
 
       dragBox.dispatchEvent(window.createEvent(POINTER_DOWN));
@@ -15,7 +15,7 @@ describe('cropend (event)', () => {
       dragBox.dispatchEvent(window.createEvent(POINTER_UP));
     });
 
-    image.addEventListener('cropend', (event) => {
+    image.__zone_symbol__addEventListener('cropend', (event) => {
       expect(event.type).to.equal('cropend');
       done();
     });
@@ -27,7 +27,7 @@ describe('cropend (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const { dragBox } = cropper;
 
       dragBox.dispatchEvent(window.createEvent(POINTER_DOWN));
@@ -35,7 +35,7 @@ describe('cropend (event)', () => {
       dragBox.dispatchEvent(window.createEvent(POINTER_UP));
     });
 
-    image.addEventListener('cropend', (event) => {
+    image.__zone_symbol__addEventListener('cropend', (event) => {
       expect(event.detail).to.be.an('object').that.has.all.keys(['action', 'originalEvent']);
       expect(event.detail.action).to.equal('crop');
       expect(event.detail.originalEvent.type).to.equal(POINTER_UP);

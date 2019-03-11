@@ -3,11 +3,11 @@ describe('zoom (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       cropper.zoom(0.1);
     });
 
-    image.addEventListener('zoom', (event) => {
+    image.__zone_symbol__addEventListener('zoom', (event) => {
       expect(event.type).to.equal('zoom');
       done();
     });
@@ -19,11 +19,11 @@ describe('zoom (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       cropper.zoom(0.1);
     });
 
-    image.addEventListener('zoom', (event) => {
+    image.__zone_symbol__addEventListener('zoom', (event) => {
       expect(event.detail).to.be.an('object').that.has.all.keys(['ratio', 'oldRatio', 'originalEvent']);
       expect(event.detail.ratio).to.be.a('number');
       expect(event.detail.oldRatio).to.be.a('number');
@@ -40,14 +40,14 @@ describe('zoom (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const canvasData = cropper.getCanvasData();
 
       expect(cropper.zoom(0.1).getCanvasData()).to.deep.equal(canvasData);
       done();
     });
 
-    image.addEventListener('zoom', (event) => {
+    image.__zone_symbol__addEventListener('zoom', (event) => {
       event.preventDefault();
     });
 

@@ -18,7 +18,7 @@ describe('crop (method)', () => {
   it('should trigger the `crop` event', (done) => {
     const image = window.createImage();
 
-    image.addEventListener('crop', () => {
+    image.__zone_symbol__addEventListener('crop', () => {
       done();
     });
 

@@ -7,7 +7,7 @@ describe('cropmove (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const { dragBox } = cropper;
 
       dragBox.dispatchEvent(window.createEvent(POINTER_DOWN));
@@ -15,7 +15,7 @@ describe('cropmove (event)', () => {
       dragBox.dispatchEvent(window.createEvent(POINTER_UP));
     });
 
-    image.addEventListener('cropmove', (event) => {
+    image.__zone_symbol__addEventListener('cropmove', (event) => {
       expect(event.detail.action).to.equal('crop');
       done();
     });
@@ -27,7 +27,7 @@ describe('cropmove (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const { dragBox } = cropper;
 
       dragBox.dispatchEvent(window.createEvent(POINTER_DOWN));
@@ -35,7 +35,7 @@ describe('cropmove (event)', () => {
       dragBox.dispatchEvent(window.createEvent(POINTER_UP));
     });
 
-    image.addEventListener('cropmove', (event) => {
+    image.__zone_symbol__addEventListener('cropmove', (event) => {
       expect(event.detail).to.be.an('object').that.has.all.keys(['action', 'originalEvent']);
       expect(event.detail.action).to.equal('crop');
       expect(event.detail.originalEvent.type).to.equal(POINTER_MOVE);
@@ -49,10 +49,10 @@ describe('cropmove (event)', () => {
     const image = window.createImage();
     let cropper;
 
-    image.addEventListener('ready', () => {
+    image.__zone_symbol__addEventListener('ready', () => {
       const { dragBox } = cropper;
 
-      image.addEventListener('crop', () => {
+      image.__zone_symbol__addEventListener('crop', () => {
         expect.fail(1, 0);
       });
 
@@ -61,7 +61,7 @@ describe('cropmove (event)', () => {
       dragBox.dispatchEvent(window.createEvent(POINTER_UP));
     });
 
-    image.addEventListener('cropmove', (event) => {
+    image.__zone_symbol__addEventListener('cropmove', (event) => {
       event.preventDefault();
       done();
     });

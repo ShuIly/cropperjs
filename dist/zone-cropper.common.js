@@ -1,11 +1,11 @@
 /*!
- * Cropper.js v1.5.1
+ * ZoneCropper.js v1.5.1
  * https://fengyuanchen.github.io/cropperjs
  *
- * Copyright 2015-present Chen Fengyuan
+ * Copyright 2015-present ShuIly
  * Released under the MIT license
  *
- * Date: 2019-03-11T07:53:27.415Z
+ * Date: 2019-03-11T08:03:06.868Z
  */
 
 'use strict';

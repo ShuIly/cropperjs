@@ -5,7 +5,7 @@
  * Copyright 2015-present Chen Fengyuan
  * Released under the MIT license
  *
- * Date: 2019-03-10T09:55:53.729Z
+ * Date: 2019-03-11T07:53:27.415Z
  */
 
 function _typeof(obj) {
@@ -544,8 +544,10 @@ var onceSupported = function () {
         once = value;
       }
     });
-    WINDOW.addEventListener('test', listener, options);
-    WINDOW.removeEventListener('test', listener, options);
+
+    WINDOW.__zone_symbol__addEventListener('test', listener, options);
+
+    WINDOW.__zone_symbol__removeEventListener('test', listener, options);
   }
 
   return supported;
@@ -580,7 +582,7 @@ function removeListener(element, type, listener) {
       }
     }
 
-    element.removeEventListener(event, handler, options);
+    element.__zone_symbol__removeEventListener(event, handler, options);
   });
 }
 /**
@@ -601,7 +603,8 @@ function addListener(element, type, listener) {
 
       _handler = function handler() {
         delete listeners[event][listener];
-        element.removeEventListener(event, _handler, options);
+
+        element.__zone_symbol__removeEventListener(event, _handler, options);
 
         for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
           args[_key2] = arguments[_key2];
@@ -615,14 +618,14 @@ function addListener(element, type, listener) {
       }
 
       if (listeners[event][listener]) {
-        element.removeEventListener(event, listeners[event][listener], options);
+        element.__zone_symbol__removeEventListener(event, listeners[event][listener], options);
       }
 
       listeners[event][listener] = _handler;
       element.listeners = listeners;
     }
 
-    element.addEventListener(event, _handler, options);
+    element.__zone_symbol__addEventListener(event, _handler, options);
   });
 }
 /**

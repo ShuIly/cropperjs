@@ -2,7 +2,7 @@ describe('crop (event)', () => {
   it('should trigger the `crop` event', (done) => {
     const image = window.createImage();
 
-    image.addEventListener('crop', (event) => {
+    image.__zone_symbol__addEventListener('crop', (event) => {
       expect(event.type).to.equal('crop');
       done();
     });
@@ -13,7 +13,7 @@ describe('crop (event)', () => {
   it('should have expected properties in `event.detail`', (done) => {
     const image = window.createImage();
 
-    image.addEventListener('crop', (event) => {
+    image.__zone_symbol__addEventListener('crop', (event) => {
       expect(event.detail).to.be.an('object').that.has.all.keys(['x', 'y', 'width', 'height', 'rotate', 'scaleX', 'scaleY']);
       expect(event.detail.x).to.be.a('number');
       expect(event.detail.y).to.be.a('number');
